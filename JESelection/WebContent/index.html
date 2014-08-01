@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>JSelection插件</title>
+<script type="text/javascript" src="script/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="script/jquery-migrate-1.2.1.js"></script>
+<script type="text/javascript" src="script/JSelection.debug.js"></script>
+<link type="text/css" rel="stylesheet" href="css/index.css"/>
+<script type="text/javascript">
+$(function(){
+	$(".content").css({
+		"position":"relative",
+		"left":($(document.body).width()-$(".content").width())/2
+	});
+	$("#left_panel li.body,#right_panel li.body").mouseover(function(){
+		$(this).removeClass("body-default").addClass("body-active");
+		
+	});
+	$("#left_panel li.body,#right_panel li.body").mouseout(function(){
+		$(this).removeClass("body-active").addClass("body-default");
+	});
+	$("#left_panel li").live('click',function(){
+		$(this).removeClass("body-active").addClass("body-default");
+		$("#right_panel").append(this);
+	});
+	$("#right_panel li").live('click',function(){
+		$(this).removeClass("body-active").addClass("body-default");
+		$("#left_panel").append(this);
+	});
+	
+});
+function moveAllFromLTR(){
+	$("#right_panel").append($("#left_panel li"));
+}
+function moveFromLTR(){
+	$("#right_panel").append($("#left_panel li:last"));
+}
+function moveFromRTL(){
+	$("#left_panel").append($("#right_panel li:last"));
+}
+function moveAllFromRTL(){
+	$("#left_panel").append($("#right_panel li"));
+}
+</script>
+</head>
+<body>
+<div class="content">
+<div class="header">JESelection插件</div>
+<div class="body">
+<div id="jeselection_plugin">
+<div class="jes-ul panel">
+<div class="head">&nbsp;</div>
+<ul id="left_panel">
+<li class="body-default body">项目一</li>
+<li class="body-default body">项目二</li>
+<li class="body-default body">项目三</li>
+</ul>
+<div class="foot">&nbsp;</div>
+</div>
+<ul class="panel toolbar_panel">
+<li class="toolbar"><img src="img/toolbar3.jpg" onclick="moveAllFromLTR()"/></li>
+<li class="toolbar"><img src="img/toolbar1.jpg" onclick="moveFromLTR()"/></li>
+<li class="toolbar"><img src="img/toolbar2.jpg" onclick="moveFromRTL()"/></li>
+<li class="toolbar"><img src="img/toolbar4.jpg" onclick="moveAllFromRTL()"/></li>
+</ul>
+<div class="jes-ul panel">
+<div class="head">&nbsp;</div>
+<ul id="right_panel" >
+<li class="body-default body">项目一</li>
+<li class="body-default body">项目二</li>
+<li class="body-default body">项目三</li>
+</ul>
+<div class="foot">&nbsp;</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+*{padding:0px;margin:0px;border:none;}
+ul{list-style:none;}
+div.header{font-weight:bold;background-color:#D5D5D5;text-align:center;width:500px;}
+div.body{width:500px;}
+div.content{width:500px;}
+.panel{float:left;vertical-align:middle;}
+.jes-ul{margin-left:20px;cursor:pointer;width:100px;height:200px;}
+.jes-ul .head{with:auto;height:6px;padding:3px;background:url("../img/panel-bg-head.jpg") no-repeat scroll #FFF 0% 0%;}
+.jes-ul ul li.body-default{padding:3px;background:url("../img/panel-bg-body.jpg") repeat-y scroll #FFF 0% 0%;color:#000;}
+.jes-ul .foot{with:auto;height:6px;padding:3px;background:url("../img/panel-bg-foot.jpg") no-repeat scroll #FFF 0% 100%;}
+.jes-ul ul li.body-active{padding:3px;background:url("../img/panel-bg-body-active.jpg") repeat-y scroll #000 0% 0%;color:#FFF;}
+.toolbar_panel{width:auto;height:auto;margin-top:50px;margin-left:15px;}
+ul.toolbar_panel li img{padding-top:3px;"}
+#jeselection_plugin{vertical-align:middle;}
